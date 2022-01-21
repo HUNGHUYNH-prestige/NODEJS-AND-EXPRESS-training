@@ -93,7 +93,10 @@ app.use(empty,(req, res, next)=>{
 // OR
 // method 2 : argment really empty
 // This define the default path for the application app.js
-
+// This is the response by default
+// when nothing is working
+// maybe there is an error somewhere
+// but I did not noticed
 app.use((req, res, next) => {
     res.send('There is nothing as argument in the use method for app');
     console.log('This is another method with no argument to show the use of method use for app');
