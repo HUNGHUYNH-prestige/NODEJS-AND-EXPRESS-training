@@ -144,3 +144,9 @@ app.get(path_8, (req, res, next) => {
 // node app
 // to run the app.js file to get start with the fun !
 
+// Use NODEJS and EXPRESS to build static web app
+// To host = héberger ==> static application ==> use NODEJS and EXPRESS
+
+// cool and simple but not easy !
+
+// 💎 shiny
