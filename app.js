@@ -38,10 +38,7 @@ const express = require('express');
 const app = express();
 const port = 3000;
 
-// Create a simple route = path in the URL
-app.get('/get', (req, res, next) => {
-    res.send('Hello World ! This is the first Express Application')
-})
+
 
 // EITHER 
 // method 1 : argument empty 
@@ -67,7 +64,10 @@ app.use((req, res, next) => {
 })
 
 
-
+// Create a simple route = path in the URL
+app.get('/get', (req, res, next) => {
+    res.send('Hello World ! This is the first Express Application')
+})
 
 
 
@@ -169,6 +169,7 @@ app.listen(port, () => {
     console.log("This is the callback function for the listen method");
     console.log('App listening at http://localhost:' + port);
     console.log('Here is the app.js file with port ==> ' + port);
+    console.log('--- --- --- --- --- ---');
 
 })
 
@@ -184,3 +185,11 @@ app.listen(port, () => {
 // share the app with other js programs by exporting the module
 module.exports = app;
 
+
+// This is important to know : by default
+// This file : app.js is the default file
+// when running npm run nodemon
+// because it is define in the package.json
+// as the main file to run
+
+// TESTING IS SO COOL !

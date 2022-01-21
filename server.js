@@ -20,10 +20,13 @@ app.listen(port_2, () => {
     console.log(`Port is active on : ${port_2}`)
 })
 
+
+// this path is not working
+// who knows why ?
 let path_get = '/get_json';
 app.get(path_get, (req, res, next) => {
     res.send('This is get json path');
-    //res.json({json_message : 'json message'});
+    res.json({json_message : 'json message'});
     console.log('json message in get method http');
 })
 
