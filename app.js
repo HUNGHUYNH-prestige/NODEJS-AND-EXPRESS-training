@@ -35,28 +35,41 @@
 console.log("Learning how to create an Express Application with NodeJS and Express the framework");
 
 const express = require('express');
-const res = require('express/lib/response');
 const app = express();
 const port = 3000;
 
 // Create a simple route = path in the URL
-app.get('/', (req, res, next) => {
+app.get('/get', (req, res, next) => {
     res.send('Hello World ! This is the first Express Application')
 })
 
-app.listen(port, () => {
-    console.log("This is the callback function for the listen method");
-    console.log('App listening at http://localhost:' + port);
-
+// EITHER 
+// method 1 : argument empty 
+let empty = '/empty';
+app.use(empty,(req, res, next)=>{
+    res.send('Simply, HTTP METHOD GET, and that\'s it');
+    console.log("Simply easy testing it's all good");
+    // here the code stops
+    // it is impossible to do more
+    // everything here will be in error status in the console on the server side
+    // server side ==> backend ==> nodejs ==> express
 })
 
-// In order to make the Express Application works, please do the following command in the command line : terminal
 
-// Command : node app
 
-// OR command : node app.js
+// OR
+// method 2 : argment really empty
+// This define the default path for the application app.js
 
-// Then, Open a web browser and type in the URL => http:localhost:3000 to see the result
+app.use((req, res, next) => {
+    res.send('There is nothing as argument in the use method for app');
+    console.log('This is another method with no argument to show the use of method use for app');
+})
+
+
+
+
+
 
 // Testing : create other routes = paths for the application made with Express
 
@@ -150,3 +163,24 @@ app.get(path_8, (req, res, next) => {
 // cool and simple but not easy !
 
 // 💎 shiny
+
+
+app.listen(port, () => {
+    console.log("This is the callback function for the listen method");
+    console.log('App listening at http://localhost:' + port);
+    console.log('Here is the app.js file with port ==> ' + port);
+
+})
+
+// In order to make the Express Application works, please do the following command in the command line : terminal
+
+// Command : node app
+
+// OR command : node app.js
+
+// Then, Open a web browser and type in the URL => http:localhost:3000 to see the result
+
+
+// share the app with other js programs by exporting the module
+module.exports = app;
+
