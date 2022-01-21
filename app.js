@@ -32,11 +32,47 @@
 
 // Create the first Express application with the code bellow :
 
+console.log('--- --- --- start --- --- ---');
+console.log('>>> app.js >>> main file >>> in nodemon');
 console.log("Learning how to create an Express Application with NodeJS and Express the framework");
+
 
 const express = require('express');
 const app = express();
 const port = 3000;
+
+
+app.listen(port, () => {
+    console.log("This is the callback function for the listen method");
+    console.log('App listening at http://localhost:' + port);
+    console.log('Here is the app.js file with port ==> ' + port);
+    console.log('--- --- --- end app.js --- --- ---');
+
+})
+
+// In order to make the Express Application works, please do the following command in the command line : terminal
+
+// Command : node app
+
+// OR command : node app.js
+
+// Then, Open a web browser and type in the URL => http:localhost:3000 to see the result
+
+
+// share the app with other js programs by exporting the module
+module.exports = app;
+
+
+// This is important to know : by default
+// This file : app.js is the default file
+// when running npm run nodemon
+// because it is define in the package.json
+// as the main file to run
+
+// TESTING IS SO COOL !
+
+// npm start will run by default the :
+// node server.js
 
 
 
@@ -165,31 +201,3 @@ app.get(path_8, (req, res, next) => {
 // 💎 shiny
 
 
-app.listen(port, () => {
-    console.log("This is the callback function for the listen method");
-    console.log('App listening at http://localhost:' + port);
-    console.log('Here is the app.js file with port ==> ' + port);
-    console.log('--- --- --- --- --- ---');
-
-})
-
-// In order to make the Express Application works, please do the following command in the command line : terminal
-
-// Command : node app
-
-// OR command : node app.js
-
-// Then, Open a web browser and type in the URL => http:localhost:3000 to see the result
-
-
-// share the app with other js programs by exporting the module
-module.exports = app;
-
-
-// This is important to know : by default
-// This file : app.js is the default file
-// when running npm run nodemon
-// because it is define in the package.json
-// as the main file to run
-
-// TESTING IS SO COOL !
